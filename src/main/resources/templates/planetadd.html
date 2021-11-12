@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add planet</title>
+</head>
+<body>
+<h2>Fill in the required fields </h2>
+<form action="#" th:action="@{/universe/planet/add}" th:object="${planet}" method="post">
+    <label for="name">Name of planet</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <input type="submit" value="Add planet">
+</form>
+</body>
+</html>

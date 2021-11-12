@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add lord</title>
+</head>
+<body>
+<h2>Fill in the required fields </h2>
+<form action="#" th:action="@{/universe/lord/add}" th:object="${lord}" method="post">
+    <label for="name">Name of lord</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <label for="age">Age</label>
+    <input type="number" th:field="*{age}" id="age">
+    </br>
+    <input type="submit" value="Add lord">
+</form>
+</body>
+</html>

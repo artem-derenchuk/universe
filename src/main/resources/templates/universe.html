@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of lords and planets</title>
+</head>
+<body>
+<h4> Table of planet and lords</h4>
+<table border="2">
+    <thead>
+    <th>ID</th>
+    <th>Name of planet</th>
+    <th>Lord</th>
+    </thead>
+    <tr th:each="planet : ${planets}">
+        <td th:text="${planet.id}"></td>
+        <td th:text="${planet.name}"></td>
+        <td th:text="${planet.lord}"></td>
+        <td> <a th:href="@{universe/planet/delete/{id}(id=${planet.id})}">Delete</a> </td>
+        <td> <a th:href="@{universe/planet/update/{id}(id=${planet.id})}">Appoint overlord</a> </td>
+    </tr>
+</table>
+<a href="/universe/planet/add">Add planet</a></h3>
+</br>
+<h4> Table of lords</h4>
+<table border="1">
+    <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    </tr>
+    <tr th:each="lord : ${lords}">
+        <td th:text="${lord.id}"></td>
+        <td th:text="${lord.name}"></td>
+        <td th:text="${lord.age}"></td>
+    </tr>
+</table>
+<a href="/universe/lord/add">Add lord</a></h3>
+</br>
+<a href="/universe/lord/top/young">Top 10 of youngest lords</a></h3>
+</br>
+<a href="/universe/lord/slacker">Slacker lords</a></h3>
+</body>
+</html>
